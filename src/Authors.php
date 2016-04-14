@@ -91,6 +91,7 @@ class Authors extends AbstractEndpoint {
 	 * the filter sends 3 params to the user so can be more easy to manipulate the
 	 * data based on certain params.
 	 *
+	 * @param object $user User object.
 	 * @return array The formated data from every item.
 	 */
 	protected function format_item( $user ) {
