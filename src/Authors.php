@@ -21,6 +21,23 @@ class Authors extends AbstractCollectionEndpoint {
 	protected $endpoint = '/authors';
 
 	/**
+	 * Object that holds the current queried object on the site.
+	 *
+	 * @since 0.1.0
+	 * @var \WP_Query
+	 */
+	protected $query = null;
+
+	/**
+	 * Flag used to carry the value of the filter and avoid to call the function
+	 * N times inside of the loop.
+	 *
+	 * @since 0.1.0
+	 * @var bool
+	 */
+	protected $format_item = false;
+
+	/**
 	 * WP_Query Loop that has been triggered from the endpoint.
 	 *
 	 * @return array An array with the data associated with the request.
