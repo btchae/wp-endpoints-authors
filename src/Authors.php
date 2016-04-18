@@ -1,6 +1,6 @@
 <?php namespace Lean\Endpoints;
 
-use Leean\AbstractEndpoint;
+use Leean\AbstractCollectionEndpoint;
 use Lean\Endpoints\Authors\Filter;
 
 /**
@@ -8,7 +8,7 @@ use Lean\Endpoints\Authors\Filter;
  *
  * @package Lean\Endpoints;
  */
-class Authors extends AbstractEndpoint {
+class Authors extends AbstractCollectionEndpoint {
 
 	/**
 	 * Path of the new endpoint.
@@ -19,49 +19,6 @@ class Authors extends AbstractEndpoint {
 	 * @var String
 	 */
 	protected $endpoint = '/authors';
-
-	/**
-	 * Array that holds all the shared arguments used for query the site.
-	 *
-	 * @since 0.1.0
-	 * @var array
-	 */
-	protected $args = [];
-
-	/**
-	 * Object that holds the current queried object on the site.
-	 *
-	 * @since 0.1.0
-	 * @var \WP_Query
-	 */
-	protected $query = null;
-
-	/**
-	 * Flag used to carry the value of the filter and avoid to call the function
-	 * N times inside of the loop.
-	 *
-	 * @since 0.1.0
-	 * @var bool
-	 */
-	protected $format_item = false;
-
-	/**
-	 * Function inherint from the parant Abstract class that is called once the
-	 * endpoint has been initiated and the method that returns the data delivered
-	 * to the endpoint.
-	 *
-	 * @Override
-	 *
-	 * @since 0.1.0
-	 *
-	 * @param \WP_REST_Request $request The request object that mimics the request
-	 *									made by the user.
-	 * @return array The data to be delivered to the endpoint
-	 */
-	public function endpoint_callback( \WP_REST_Request $request ) {
-		$this->args = $request->get_params();
-		return $this->filter_data( $this->loop() );
-	}
 
 	/**
 	 * WP_Query Loop that has been triggered from the endpoint.
@@ -119,19 +76,5 @@ class Authors extends AbstractEndpoint {
 			$meta['pages'] = ceil( $this->query->total_users / $this->args['number'] );
 		}
 		return $meta;
-	}
-
-	/**
-	 * Clean up and make sure we don't deliver post with password, privates and
-	 * some other datat that might be sensible on the API. This medhod overrides
-	 * the default mechanism inherint from the parent class.
-	 *
-	 * @Override
-	 *
-	 * @since 0.1.0
-	 * @return array an array with the accepted arguments and options per each argument.
-	 */
-	public function endpoint_args() {
-		return [];
 	}
 }
