@@ -56,7 +56,10 @@ class Authors extends AbstractCollectionEndpoint {
 
 		return [
 			'data' => $data,
-			'pagination' => $this->get_pagination(),
+			'pagination' => $this->get_pagination(
+				$this->query->total_users,
+				ceil( $this->query->total_users / $this->args['number'] )
+			),
 		];
 	}
 
@@ -74,24 +77,5 @@ class Authors extends AbstractCollectionEndpoint {
 		$item->roles = $user->roles;
 
 		return apply_filters( Filter::ITEM_FORMAT, $item, $user, $this->args );
-	}
-
-	/**
-	 * Returns the data related with the pagination, useful to
-	 * iterate over the data in the FE on a infinite scroll or load more
-	 * buttons since we know if there are more pages ahead.
-	 *
-	 * @return array The array with the formated data.
-	 */
-	protected function get_pagination() {
-		$total = absint( $this->query->total_users );
-		$meta = [
-			'items' => $total,
-			'pages' => 0,
-		];
-		if ( $total > 0 ) {
-			$meta['pages'] = ceil( $this->query->total_users / $this->args['number'] );
-		}
-		return $meta;
 	}
 }
