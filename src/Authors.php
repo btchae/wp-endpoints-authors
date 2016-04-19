@@ -45,7 +45,9 @@ class Authors extends AbstractCollectionEndpoint {
 	protected function loop() {
 		$data = [];
 
-		$this->args['number'] = get_option( 'posts_per_page', 10 );
+		if ( ! isset( $this->args['number'] ) ) {
+			$this->args['number'] = get_option( 'posts_per_page', 10 );
+		}
 
 		$this->query = new \WP_User_Query( $this->args );
 		if ( $this->query->total_users > 0 ) {
