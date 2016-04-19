@@ -43,13 +43,23 @@ class Authors extends AbstractCollectionEndpoint {
 	 * @return array An array with the data associated with the request.
 	 */
 	protected function loop() {
-		$data = [];
+		global $wpdb;
 
+		// Default number of users to display per page.
 		if ( ! isset( $this->args['number'] ) ) {
 			$this->args['number'] = get_option( 'posts_per_page', 10 );
 		}
 
-		$this->query = new \WP_User_Query( $this->args );
+		// By default we show non-admins.
+		$this->args['meta_key'] = $wpdb->prefix . 'user_level';
+		$this->args['meta_compare'] = '<';
+		$this->args['meta_value'] = '10';
+
+		// Loop through the data.
+		$data = [];
+		$this->query = new \WP_User_Query(
+			apply_filter( Filter::QUERY_ARGS, $this->args )
+		);
 		if ( $this->query->total_users > 0 ) {
 			foreach ( $this->query->results as $user ) {
 				$data[] = $this->format_item( $user );

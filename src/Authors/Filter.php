@@ -8,4 +8,5 @@
  */
 class Filter {
 	const ITEM_FORMAT = 'ln_endpoints_authors_item';
+	const QUERY_ARGS = 'ln_endpoints_authors_args';
 }
