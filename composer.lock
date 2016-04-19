@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ced6e203df9851e4365fcfc1aa16ecd",
-    "content-hash": "82a3eb3c340ad17b26952f610ffeb0e3",
+    "hash": "57153b80fc2620f63074ec957318aee6",
+    "content-hash": "5546264d53bdc9db80c91002cb359d0c",
     "packages": [
         {
             "name": "moxie-leean/wp-endpoint",
-            "version": "0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moxie-leean/wp-endpoint.git",
-                "reference": "48912c610a95f1ca8ea6a545b067c1950bee92e5"
+                "reference": "2c2bcf680f671022d24160c97bca8115d71b9951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/wp-endpoint/zipball/48912c610a95f1ca8ea6a545b067c1950bee92e5",
-                "reference": "48912c610a95f1ca8ea6a545b067c1950bee92e5",
+                "url": "https://api.github.com/repos/moxie-leean/wp-endpoint/zipball/2c2bcf680f671022d24160c97bca8115d71b9951",
+                "reference": "2c2bcf680f671022d24160c97bca8115d71b9951",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
             ],
             "description": "wp-endpoint",
             "homepage": "https://github.com/moxie-leean/wp-endpoints-post/",
-            "time": "2016-04-03 20:44:48"
+            "time": "2016-04-19 14:24:34"
         }
     ],
     "packages-dev": [
