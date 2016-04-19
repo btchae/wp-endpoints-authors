@@ -51,5 +51,5 @@ of the WP_User_Query params in order to update your results.
 Get list of authors.
 
 ```json
-wp-json/leean/v1/authors-collection?role=author
+wp-json/leean/v1/authors
 ```
