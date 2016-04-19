@@ -58,7 +58,7 @@ class Authors extends AbstractCollectionEndpoint {
 		// Loop through the data.
 		$data = [];
 		$this->query = new \WP_User_Query(
-			apply_filter( Filter::QUERY_ARGS, $this->args )
+			apply_filters( Filter::QUERY_ARGS, $this->args )
 		);
 		if ( $this->query->total_users > 0 ) {
 			foreach ( $this->query->results as $user ) {
