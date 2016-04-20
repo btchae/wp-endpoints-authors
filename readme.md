@@ -43,8 +43,9 @@ The default URL is:
 /wp-json/leean/v1/authors
 ```
 
-By default the collection is the list of authors, you can use most
-of the WP_User_Query params in order to update your results.
+By default the collection is the list of users excluding administrators, you can use most
+of the WP_User_Query params in order to update your results and there is a filter available
+to override query arguments.
 
 ## Request examples
 
