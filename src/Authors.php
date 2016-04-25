@@ -1,6 +1,6 @@
 <?php namespace Lean\Endpoints;
 
-use Leean\AbstractCollectionEndpoint;
+use Lean\AbstractCollectionEndpoint;
 use Lean\Endpoints\Authors\Filter;
 
 /**
