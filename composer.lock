@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a004f898838f64247e0b3ae2a710b15a",
+    "hash": "0a839f93170d740ca7626539f4e8e968",
     "content-hash": "8f6af08e26bb9543a283d651980ac20a",
     "packages": [
         {
@@ -12,12 +12,12 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/moxie-leean/wp-endpoint.git",
+                "url": "https://github.com/moxie-lean/wp-endpoint.git",
                 "reference": "a0d57f6cd385a720c2c0d2658d46bb199c65295e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moxie-leean/wp-endpoint/zipball/a0d57f6cd385a720c2c0d2658d46bb199c65295e",
+                "url": "https://api.github.com/repos/moxie-lean/wp-endpoint/zipball/a0d57f6cd385a720c2c0d2658d46bb199c65295e",
                 "reference": "a0d57f6cd385a720c2c0d2658d46bb199c65295e",
                 "shasum": ""
             },
