@@ -1,5 +1,7 @@
 # WP Endpoint Authors
 
+**This package is depreciated. LEAN now uses the WordPress REST API plugins instead**
+
 > Query against a WordPress site and get a JSON response with a
 > collection of authors associated with your request.
 
